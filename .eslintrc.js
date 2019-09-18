@@ -6,16 +6,14 @@ module.exports = {
 	},
 	extends: [
 		'eslint:recommended',
-		'plugin:prettier/recommended',
 		'plugin:react/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'prettier/@typescript-eslint'
+		'plugin:@typescript-eslint/recommended'
 	],
 	globals: {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly'
 	},
-	parser: '@typescript-eslint/parser',
+	parser: 'babel-eslint',
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true
@@ -23,7 +21,7 @@ module.exports = {
 		ecmaVersion: 2018,
 		sourceType: 'module'
 	},
-	plugins: ['react', 'prettier', '@typescript-eslint'],
+	plugins: ['react', '@typescript-eslint'],
 	settings: {
 		react: {
 			pragma: 'React',
@@ -35,18 +33,6 @@ module.exports = {
 		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'never'],
-		'prettier/prettier': [
-			'warn',
-			{
-				singleQuote: true,
-				semi: false,
-				trailingComma: 'none',
-				printWidth: 120,
-				tabWidth: 4,
-				useTabs: true,
-				jsxSingleQuote: true
-			}
-		],
 		'key-spacing': ['error', { afterColon: true, mode: 'strict' }],
 		'@typescript-eslint/no-empty-interface': 0
 	}
