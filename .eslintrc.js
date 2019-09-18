@@ -40,7 +40,7 @@ module.exports = {
 			{
 				singleQuote: true,
 				semi: false,
-				trailingComma: 'all',
+				trailingComma: 'none',
 				printWidth: 120,
 				tabWidth: 4,
 				useTabs: true,
