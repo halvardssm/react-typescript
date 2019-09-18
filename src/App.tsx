@@ -1,6 +1,10 @@
 import * as React from 'react'
 import { Container } from 'react-bootstrap'
-import { I18nextProvider, withTranslation, WithTranslation } from 'react-i18next'
+import {
+	I18nextProvider,
+	withTranslation,
+	WithTranslation
+} from 'react-i18next'
 import { BrowserRouter } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'

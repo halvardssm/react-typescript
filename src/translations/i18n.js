@@ -15,7 +15,7 @@ i18next
 	.use(initReactI18next)
 	.init({
 		interpolation: {
-			escapeValue: false,
+			escapeValue: false
 		},
 		debug: process.env.NODE_ENV !== 'production',
 		load: 'languageOnly',
@@ -30,8 +30,8 @@ i18next
 			bindI18n: 'languageChanged loaded',
 			bindStore: 'added removed',
 			nsMode: 'default',
-			transSupportBasicHtmlNodes: true,
-		},
+			transSupportBasicHtmlNodes: true
+		}
 	})
 
 export default i18next
