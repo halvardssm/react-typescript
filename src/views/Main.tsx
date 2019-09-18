@@ -12,11 +12,9 @@ class Main extends React.Component<MainProps> {
         const { t, i18n } = this.props
         return (
             <Fragment>
-                <Header />
                 <div id='main'>
                     <p>Hello World!</p>
                 </div>
-                <Footer />
             </Fragment>
         )
     }
