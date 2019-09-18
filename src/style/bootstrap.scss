@@ -1,0 +1,4 @@
+// Imports the custom theme before the bootstrap scss
+@import './_variables.scss';
+
+@import '~bootstrap/scss/bootstrap.scss';
