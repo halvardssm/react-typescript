@@ -1,14 +1,10 @@
-import React from 'react'
-import { withTranslation, WithTranslation } from 'react-i18next'
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-interface FooterProps extends WithTranslation {}
-
-class Footer extends React.Component<FooterProps> {
-	render() {
-		const { t } = this.props
-
-		return <footer id='footer'></footer>
-	}
-}
-
-export default withTranslation()(Footer)
+export const Footer: React.FC = () => {
+  const { t } = useTranslation();
+  return (
+    <footer id="footer">
+    </footer>
+  );
+};

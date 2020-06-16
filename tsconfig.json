@@ -15,7 +15,11 @@
 		// use typescript to transpile jsx to js
 		"jsx": "react",
 		"baseUrl": "./src",
-		"lib": ["esnext", "dom", "dom.iterable"],
+		"lib": [
+			"esnext",
+			"dom",
+			"dom.iterable"
+		],
 		"module": "es6",
 		"removeComments": true,
 		"importHelpers": true,
@@ -33,6 +37,7 @@
 		"noUnusedParameters": false,
 		"noImplicitReturns": false,
 		"noFallthroughCasesInSwitch": false,
-		"forceConsistentCasingInFileNames": false
+		"forceConsistentCasingInFileNames": false,
+		"resolveJsonModule": true
 	}
 }

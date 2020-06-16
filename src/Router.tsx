@@ -1,26 +1,26 @@
-import React from 'react'
-import { withTranslation, WithTranslation } from 'react-i18next'
-import { Redirect, Route, Switch } from 'react-router-dom'
-import Main from './views/Main'
+import * as React from "react";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { Main } from "./pages/Main";
 
-export const ROUTE_HOME = '/'
+export const ROUTE_HOME = "/";
+export const routes = [
+  {
+    path: ROUTE_HOME,
+    name: "Main",
+    exact: true,
+    component: Main,
+  },
+];
 
-interface RouterProps extends WithTranslation {}
-
-class Router extends React.Component<RouterProps> {
-	render() {
-		const { i18n, t } = this.props
-
-		return (
-			<Switch>
-				{/*Main pages*/}
-				{<Route path={ROUTE_HOME} exact component={Main} />}
-
-				{/*Default redirect if no match*/}
-				<Redirect to={ROUTE_HOME} />
-			</Switch>
-		)
-	}
-}
-
-export default withTranslation()(Router)
+export const Router: React.FC = (props) => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        {routes.map((props, i) => (
+          <Route key={i} {...props} />
+        ))}
+        <Redirect to={ROUTE_HOME} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
