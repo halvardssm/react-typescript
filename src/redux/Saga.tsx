@@ -1,5 +1,7 @@
-import { call, put, select, takeLatest } from 'redux-saga/effects'
+import {takeLatest} from 'redux-saga/effects'
+import {loginFlow} from "./auth/AuthSaga";
+import {AUTH_LOGIN_STATES} from "../constants";
 
 export function* saga() {
-  console.log('Hello Sagas!')
+  yield takeLatest(AUTH_LOGIN_STATES.START, loginFlow)
 }

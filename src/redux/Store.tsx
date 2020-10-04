@@ -1,14 +1,10 @@
-import { Dispatch } from "react";
-import {
-  AnyAction,
-  applyMiddleware,
-  createStore,
-  Middleware,
-  PreloadedState,
-} from "redux";
-import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
+import {Dispatch} from "react";
+import {AnyAction, applyMiddleware, createStore, Middleware, PreloadedState,} from "redux";
+import {composeWithDevTools} from "redux-devtools-extension/developmentOnly";
 import createSagaMiddleware from "redux-saga";
-import { reducer } from "./Reducer";
+import {reducer} from "./Reducer";
+import {saga} from "./Saga";
+import {ActionProp} from "../TypeUtils";
 
 // export type LocalState = ReturnType<typeof reducer>
 export type LocalState = {
@@ -90,4 +86,7 @@ const enhancer = composeEnhancers(
 );
 
 export const store = createStore(reducer, hydrateStore(), enhancer);
-export const action = (type: string) => store.dispatch({ type });
+
+sagaMiddleware.run(saga)
+
+export const action = (props: ActionProp) => store.dispatch(props)
