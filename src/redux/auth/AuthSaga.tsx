@@ -1,6 +1,7 @@
 import axios from "axios";
 import {call, put} from "redux-saga/effects";
 import {AUTH_LOGIN_STATES, URL_LOGIN} from "../../constants";
+import {ActionProp} from "../../TypeUtils";
 
 export type AuthRequestBody = {
     email: string;
@@ -20,7 +21,7 @@ export async function authorize(payload: AuthRequestBody) {
     return result.data
 }
 
-export function* loginFlow(payload: AuthRequestBody) {
+export function* loginFlow(payload: ActionProp<AuthRequestBody>) {
     try {
         const response = yield call(authorize, payload)
         yield put({

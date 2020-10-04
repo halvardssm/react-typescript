@@ -1,5 +1,4 @@
 export type ValueOf<T> = T[keyof T]
-export type ActionProp = {
+export type ActionProp<T extends Record<string, any> = Record<string, any>> = {
     type: string
-    [props: string]: any
-}
+} & T
