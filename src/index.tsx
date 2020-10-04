@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { App } from "./App";
-import { store } from "./redux/Store";
+import {App} from "./App";
+import {store} from "./redux/Store";
 import "./translations/i18n";
 import "./style/index.pcss"
 

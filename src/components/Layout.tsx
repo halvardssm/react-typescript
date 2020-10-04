@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Helmet } from "react-helmet";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme, GlobalStyle } from "../style/theme";
-import { Footer } from "./Footer";
-import { Header } from "./Header";
+import {Helmet} from "react-helmet";
+import {ThemeProvider} from "styled-components";
+import {defaultTheme, GlobalStyle} from "../style/theme";
+import {Footer} from "./Footer";
+import {Header} from "./Header";
 
 interface LayoutProps {
   skipHeader?: boolean;
