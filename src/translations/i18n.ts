@@ -3,9 +3,9 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 // @ts-ignore
 // import languageFiles from "./*.json";
-const languageFiles = {};
+const languageFiles:Record<string, any> = {};
 export const languageOrder = ["en"];
-const langResources = {};
+const langResources:Record<string, any> = {};
 
 languageOrder.forEach((lang) => {
   langResources[lang] = { translation: languageFiles[lang] };

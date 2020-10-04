@@ -21,7 +21,7 @@ const STORAGE_VERSION = "REDUX_STORE_V";
 const STORAGE_VERSION_NUMBER = "1";
 const STORAGE_EXPIRY_TIME = 3 * (60 * 60 * 1000);
 
-const setStorage = (key: string, value: string | object): void => {
+const setStorage = (key: string, value: string | Record<string, any>): void => {
   if (typeof value !== "string") value = JSON.stringify(value);
   localStorage.setItem(key, value);
 };
@@ -35,12 +35,12 @@ const localStorageMiddleware: Middleware = ({ getState }) => {
     (action: any) => {
       const result = next(action);
       const now = new Date().getTime();
-      const state = getState();
-      const newState = {};
+      const state:Record<string, any> = getState();
+      const newState:Record<string, any> = {};
 
-      for (let [key, value] of Object.entries(state)) {
-        const newReducer = {};
-        for (let [subKey, subValue] of Object.entries(value)) {
+      for (const [key, value] of Object.entries(state)) {
+        const newReducer:Record<string, any> = {};
+        for (const [subKey, subValue] of Object.entries(value)) {
           newReducer[subKey] = subValue;
         }
         newState[key] = newReducer;
